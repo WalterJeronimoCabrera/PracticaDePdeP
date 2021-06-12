@@ -164,17 +164,4 @@ Definir la función descendientes, que dado un bárbaro nos de sus infinitos des
 
 --C. Pregunta: ¿Se podría aplicar sinRepetidos sobre la lista de objetos? ¿Y sobre el nombre de un bárbaro? ¿Por qué?
 
--------------------------------------------------------------------------------------------------------------
-
--- prueba de que anda el git 
-
--- sisi anda el git
-
-
-
---prueba definitiva de actualizacion
-
-
-
-
-
+-----------------------------------------------------------------------------------------------------------
