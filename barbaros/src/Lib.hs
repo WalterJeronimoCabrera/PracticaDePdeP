@@ -161,6 +161,7 @@ los objetos de su padre, pero antes de pasar a la siguiente generación, utiliza
 
 Definir la función descendientes, que dado un bárbaro nos de sus infinitos descendientes. -}
 
+descendientes 
 
 --C. Pregunta: ¿Se podría aplicar sinRepetidos sobre la lista de objetos? ¿Y sobre el nombre de un bárbaro? ¿Por qué?
 

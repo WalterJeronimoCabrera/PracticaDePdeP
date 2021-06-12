@@ -12,17 +12,31 @@ data Heroe = Heroe {
 type Labor = [Tarea]
 type Tarea = Heroe -> Heroe
 
+jero:: Heroe
 jero = Heroe "Jeronimo" "ProMas" 100 [] []
+
+julian :: Heroe
 julian = Heroe "Julian" "Laburante" 101 [] []
+
+oriana :: Heroe
 oriana = Heroe "Oriana" "laPro" 499 [inteligencia,calculadora] [cocer]
+
+octavio :: Heroe
 octavio = Heroe "Octavio" "Dormilon" 50 [inteligencia, celular, laLanzaDelOlimpo, xiphos] []
 
 cocer :: Tarea
 cocer heroe = cambiarArtefactosDelHeroe (maquinaDeCocer :) heroe
 
+maquinaDeCocer :: Artefacto
 maquinaDeCocer = Artefacto "Tatakae" 350 
+
+inteligencia :: Artefacto
 inteligencia = Artefacto "Inteligencia" 200
+
+calculadora:: Artefacto
 calculadora = Artefacto "Calculeitor" 20
+
+celular :: Artefacto
 celular = Artefacto "celular" 400
 
 
@@ -50,13 +64,18 @@ data Artefacto = Artefacto {
     rareza :: Int
 } deriving (Show, Eq)
 
+cambiarRareza :: (Int -> Int) -> Artefacto -> Artefacto
 cambiarRareza funcion artefacto = artefacto {rareza = funcion . rareza $ artefacto }
 
+xiphos :: Artefacto
 xiphos = Artefacto "Xiphos" 50
+
+laLanzaDelOlimpo :: Artefacto
 laLanzaDelOlimpo = Artefacto "la lanza del Olimpo" 100
 
 --2)
 
+pasarALaHistoria :: Heroe -> Heroe
 pasarALaHistoria heroe
     | (reconocimiento heroe) > 1000 = cambiarEpiteto "El mítico" heroe
     | reconocimiento heroe < 500 && reconocimiento heroe > 100 = 
@@ -92,7 +111,8 @@ data Bestia = Bestia {
 type Debilidad = Heroe -> Bool
 
 matarUnaBestia bestia heroe
-    | puedeMatar bestia heroe = cambiarEpiteto ("El asesino de " ++ (nombreBestia bestia))
+    | puedeMatar bestia heroe = cambiarEpiteto ("El asesino de " ++ (nombreBestia bestia)) $ heroe
+    | otherwise               = cambiarEpiteto "El cobarde" . cambiarArtefactosDelHeroe (drop 1) $ heroe
 
 puedeMatar bestia heroe = (debilidad bestia) heroe
 
@@ -136,10 +156,14 @@ sumatoriaDeRareza heroe = sum . (map rareza) $ (artefactos heroe)
 
 listaDeArtefactos = [elRelampagoDeZeus, calculadora, inteligencia]
 listaDeTareas = [cocer, escalarElOlimpo, ayudarACruzarLaCalle 8, encontrarUnArtefacto calculadora]
--- 8)
+
+
+-- 8) Se tilda todoo
 
 
 -- 9)
 
 realizarUnaLabor :: Labor -> Heroe -> Heroe
 realizarUnaLabor labor heroe = foldr hacerUnaTarea heroe labor
+
+--10)
