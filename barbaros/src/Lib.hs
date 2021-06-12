@@ -166,9 +166,5 @@ Definir la función descendientes, que dado un bárbaro nos de sus infinitos des
 
 -------------------------------------------------------------------------------------------------------------
 
--- Practica Parcial heroes de leyenda
+-- prueba de que anda el git 
 
--- 1) 
-data Heroe = Heroe {
-  nombreHeroe :: String
-}
