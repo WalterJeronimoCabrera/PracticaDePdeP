@@ -18,7 +18,7 @@ data Barbaro = Barbaro {
 } deriving (Show)
 
 dave = Barbaro "Dave" 100 ["tejer","escribirPoesia"] [ardilla, varitasDefectuosas]
-jero = Barbaro "Jero**" 1000 ["nada", ""] [ardilla]
+jero = Barbaro "Jero**" 1000 ["nada", ""] [varitasDefectuosas, espada 10]
 astro = Barbaro "Astro" 100 ["nadar"] [ardilla, espada 10]
 julian = Barbaro "Julian" 50 ["Escribir Poesía Atroz"] [ardilla]
 
@@ -161,7 +161,10 @@ los objetos de su padre, pero antes de pasar a la siguiente generación, utiliza
 
 Definir la función descendientes, que dado un bárbaro nos de sus infinitos descendientes. -}
 
-descendientes 
+aplicarObjeto barbaro = map ($barbaro) (objetos barbaro)
+
+--aplicarASiMismos barbaro =
+--descendientes 
 
 --C. Pregunta: ¿Se podría aplicar sinRepetidos sobre la lista de objetos? ¿Y sobre el nombre de un bárbaro? ¿Por qué?
 
